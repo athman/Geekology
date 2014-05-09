@@ -7,6 +7,7 @@ Geekology::Application.routes.draw do
 
   root "pages#home"
   match "/home", to: 'pages#home', via: 'get'
+  match "/contact", to: "pages#contact", via: "get"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
