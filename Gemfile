@@ -53,6 +53,7 @@ group :test do
   gem 'factory_girl_rails', "~>4.3.0"
   gem 'cucumber-rails', '1.4.0', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'email_spec', "1.5.0"
 end
 
 group :development do
