@@ -35,8 +35,11 @@ group :production do
   gem 'rails_12factor'
 end
 
-# Randomly create fake users in the system
+# Automatically generate fake user details
 gem 'faker'
+
+# User devise to authenticate and manage users
+gem 'devise', "3.2.4"
 
 # Use will paginate for pagination
 gem 'will_paginate'
