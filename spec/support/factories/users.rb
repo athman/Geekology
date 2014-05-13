@@ -1,3 +1,5 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
 FactoryGirl.define do
   factory :user do
     first_name "Test"
@@ -9,3 +11,4 @@ FactoryGirl.define do
       # confirmed_at Time.now
   end
 end
+
