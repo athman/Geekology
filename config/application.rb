@@ -29,8 +29,10 @@ module Geekology
       g.stylesheets = false
       g.javascripts = false
       g.helper = false
-
     end
+
+    #We don’t want passwords written to the log file
+    config.filter_parameters += [:password, :password_confirmation]
 
   end
 end

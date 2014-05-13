@@ -1,0 +1,71 @@
+<% provide(:title, "Sign up") %>
+<% provide(:description, "User registration page. New users register at this page") %>
+
+<section id="registration-page" class="container">
+  <h2 class="center">Sign Up</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "center" } ) do |f| %>
+    <fieldset class="registration-form">
+
+      <div class="control-group">
+        <!-- First name -->
+        <% if resource.errors.include?(:first_name) %>
+          <span class="label label-danger"><%= @user.errors.full_messages_for(:first_name) %></span>
+        <% end %>
+        <div class="controls">
+          <%= f.text_field :first_name, class: "input-xlarge", placeholder: "First name" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- Surname -->
+        <% if resource.errors.include?(:surname) %>
+          <span class="label label-danger"><%= @user.errors.full_messages_for(:surname) %></span>
+        <% end %>
+        <div class="controls">
+          <%= f.text_field :surname, class: "input-xlarge", placeholder: "Surname" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- Email -->
+        <% if resource.errors.include?(:email) %>
+          <span class="label label-danger"><%= @user.errors.full_messages_for(:email) %></span>
+        <% end %>
+        <div class="controls">
+          <%= f.email_field :email, class: "input-xlarge", placeholder: "Email" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- Password -->
+        <% if resource.errors.include?(:password) %>
+          <span class="label label-danger"><%= @user.errors.full_messages_for(:password) %></span>
+        <% end %>
+        <div class="controls">
+          <%= f.password_field :password, class: "input-xlarge", placeholder: "Password" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- Password confirmation -->
+        <% if resource.errors.include?(:password_confirmation) %>
+          <span class="label label-danger"><%= @user.errors.full_messages_for(:password_confirmation) %></span>
+        <% end %>
+        <div class="controls">
+          <%= f.password_field :password_confirmation, class: "input-xlarge", placeholder: "Password (Confirm)" %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <!-- Submit button -->
+        <div class="controls">
+          <%= f.submit "Sign Up", class: "btn btn-success btn-large btn-block", placeholder: "Password (Confirm)" %>
+        </div>
+      </div>
+
+    </fieldset>
+  <% end %>
+
+  <p class="center">Already have an account? <%= link_to "Sign In", user_session_path %></p>
+
+</section>
